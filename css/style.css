@@ -127,8 +127,8 @@ a, a:hover {
     margin-top: 30px;
 }
 
-recent-beats-wrapper table {
-    width: 80%;
+table {
+    width: 60%;
     margin: 0 auto;
     margin-top: 20px;
     color: #FFF;
@@ -138,6 +138,7 @@ recent-beats-wrapper table {
     color: #FFF;
     font-size: 30px;
     text-align: center;
+    margin-top: 30px;
 }
 
 .recent-beats:hover {

@@ -6,7 +6,10 @@ app.controller('mainController', function($scope, $http) {
     function getSearchItems() {
         //slice reverse because most recent means we have to read the array backwards
         //because most recent beat is always pushed onto the back of the array
-        return angular.fromJson(localStorage.getItem("searches")).slice().reverse();
+        if (localStorage.getItem("searches") != null)
+            return angular.fromJson(localStorage.getItem("searches")).slice().reverse();
+        else
+            return null;
     }
 
     //acts as a wrapper for saving the users's searches/preferences
@@ -26,6 +29,9 @@ app.controller('mainController', function($scope, $http) {
 
         searches.push(newSearch);
         localStorage.setItem("searches", JSON.stringify(searches));
+
+        //update DOM
+        $scope.recentBeats = getSearchItems();
     }
 
     var ARTIST_SEARCH = 0;
@@ -36,6 +42,7 @@ app.controller('mainController', function($scope, $http) {
     $scope.albumSearch = false;
     $scope.recentBeats = getSearchItems();
 
+    //toggles between the artist search and album search
     function switchSearch(searchType) {
         if (searchType == ARTIST_SEARCH) {
            $scope.albumSearch = false;
@@ -54,6 +61,7 @@ app.controller('mainController', function($scope, $http) {
         }
     }
 
+    //the catual search function that hits the spotify API
     $scope.search = function() {
         $http.get(API + "search?type=" + $scope.searchType + "&q=" + $scope.searchInput).success(function(data) {
             $scope.results = true;
@@ -72,6 +80,7 @@ app.controller('mainController', function($scope, $http) {
         });
     };
 
+    //when the user clicks on their most recent beats list, this will trigger the search for it
     $scope.searchBeat = function(searchType, query) {
         $scope.searchType = searchType;
         $scope.searchInput = query;
