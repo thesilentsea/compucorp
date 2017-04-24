@@ -1,0 +1,157 @@
+$primaryColour: #323340;
+$secondaryColour: #373947;
+$lightGrey: #999;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: $primaryColour;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font-family: raleway;
+    padding-bottom: 80px;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.default-colour {
+    background-color: $primaryColour;
+}
+
+#content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#header {
+    height: 30%;
+    background-image: url('../img/header-gradient.png');
+    background-repeat: repeat-x;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+#hero-image {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#main-search-wrapper {
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#main-search {
+    width: 78%;
+    display: block;
+    padding: 10px;
+    color: $lightGrey;
+    border-radius: 30px;
+    outline: none;
+    font-size: 25px;
+    float: left;
+}
+
+#search {
+    width: 15%;
+    float: left;
+    background-color: #cf5d83;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#search:hover {
+    background-color: #c63163;
+}
+
+#results-wrapper {
+    background-color: $secondaryColour;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+#no-result-icon {
+    color: $primaryColour;
+    font-size: 200px;
+    margin-top: 100px;
+}
+
+#no-results {
+    color: #3f414f;
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+.artist-results {
+    float: left;
+    width: 23%;
+    height: 450px;
+    margin-right: 1.5%;
+}
+
+.artist-results img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    border: none;
+}
+
+.primary-search {
+    background-color: $secondaryColour;
+}
+
+.search-tab {
+    color: #FFf;
+    width: 150px;
+    padding: 20px;
+    float: left;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.search-tab:hover {
+    background-color: $secondaryColour;
+}
+
+.recent-beats-wrapper {
+    width: 30%;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    table {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+        color: #FFF;
+    }
+}
+
+.rb-title {
+    color: #FFF;
+    font-size: 30px;
+    text-align: center;
+}
+
+.recent-beats:hover {
+    background-color: $lightGrey;
+    cursor: pointer;
+    color: #000;
+}
+
+.recent-beats {
+    td {
+        padding: 10px;
+    }
+}

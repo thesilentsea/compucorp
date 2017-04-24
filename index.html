@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo for compuserve</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel = "stylesheet" type = "text/css" href = "resources/fontawesome/css/font-awesome.css">
+    <link rel = "stylesheet" type = "text/css" href = "resources/raleway.css">
+
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
+
+    <script src = "resources/angular.min.js"></script>
+    <script src = "js/mainController.js"></script>
+
+    <script>
+
+    </script>
+</head>
+
+<body ng-app = "spotifyApp" ng-controller = "mainController">
+    <div id = "content">
+        <div id = "header">
+            <img src = "img/hero-image.png" id = "hero-image">
+        </div>
+    </div>
+
+    <div id = "main-search-wrapper">
+        <input type = "text" placeholder = "Search for an artist or album title" id = "main-search" ng-model = "searchInput">
+        <div id = "search" ng-click = "search()">
+            Search <i class = "fa fa-search"></i>
+        </div>
+
+        <div style = "clear: both;"></div>
+    </div>
+
+    <div style = "recent-beats-wrapper">
+        <div class = "rb-title">
+            Recent Beats
+        </div>
+
+
+        <table>
+            <tr ng-repeat = "x in recentBeats | limitTo: 10" class = "recent-beats"
+                ng-class-even = "'primary-search'" ng-click = "searchBeat(x.searchType, x.query)">
+                <td>
+                    {{ x.query }}
+                </td>
+
+                <td>
+                    <i class = "fa fa-search"></i> Search
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style = "width: 80%; margin: 0 auto; margin-top: 30px;">
+        <div ng-click = "changeSearchType(0)" class = "search-tab primary-search" id = "artist-tab">
+            <i class = "fa fa-microphone"></i> Artists
+        </div>
+
+        <div ng-click = "changeSearchType(1)" class = "search-tab default-colour" id = "album-tab">
+            <i class = "fa fa-music"></i> Albums
+        </div>
+
+        <div style = "clear: both;"></div>
+    </div>
+
+    <div id = "results-wrapper" style = "text-align: center;">
+        <div ng-show = "!results">
+            <i class = "fa fa-search" id = "no-result-icon"></i>
+            <div id = "no-results">
+                You results will appear here
+            </div>
+        </div>
+
+        <div ng-show = "results">
+            <div ng-show = "artistSearch" ng-repeat = "x in artists.artists.items">
+                <div class = "artist-results">
+                    <a href = "{{ x.external_urls.spotify }}">
+                        <img ng-src = "{{ x.images[1].url }}">
+
+                        <div style = "color: #FFF; margin-top: 10px; font-size: 25px;">
+                            <i class = "fa fa-users"></i> Followers: {{ x.followers.total }}
+                        </div>
+
+                        <div style = "color: #FFF; font-size: 25px;">
+                            Main Genre: {{ x.genres[0] }}
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div ng-show = "albumSearch">
+                <div ng-repeat = "x in albums.albums.items">
+                    <a href = "{{ x.artists.external_urls.spotify }}">
+                        <div class = "artist-results">
+                            <img ng-src = "{{ x.images[1].url }}">
+
+                            <div style = "color: #FFF; margin-top: 10px; font-size: 25px;">
+                                <i class = "fa fa-microphone"></i> Artist: {{ x.artists[0].name }}
+                            </div>
+
+                            <div style = "color: #FFF; font-size: 25px;">
+                                <i class = "fa fa-music"></i> Album Name: {{ x.name }}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div style = "clear: both;"></div>
+        </div>
+    </div>
+</body>
+</html>
