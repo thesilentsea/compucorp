@@ -5,6 +5,7 @@ or album, from which you can then click through to go to the spotify page pertai
 
 ## Installation
 You can just view the solution where I've hosted it on AWS (Amazon Web Services) for your convenience here:
+http://compucorpf.s3-website-ap-southeast-2.amazonaws.com/
 
 Or you can simply clone this repository and just open the index.html file in the browser of your convenience.
 
