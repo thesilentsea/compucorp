@@ -8,7 +8,7 @@ You can just view the solution where I've hosted it on AWS (Amazon Web Services)
 
 Or you can simply clone this repository and just open the index.html file in the browser of your convenience.
 
-##USAGE
+## Usage
 Simply enter an artist or album name in the search bar and click "Search". You can toggle between the artist and album search 
 by pressing the relevant tab above where the results are displayed.
 
