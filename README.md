@@ -1,5 +1,4 @@
 ## Spotify Music Search for CompuCorp
-##Spotify Music Search for CompuCorp
 
 Hi CompuCorp, this is the solution that I did with the time I could muster on the weekend. It allows you to search for an artist 
 or album, from which you can then click through to go to the spotify page pertaining to what you searched.
